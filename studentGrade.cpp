@@ -53,25 +53,35 @@ int main() {
 
 void calculateGrade(subject &subj) {
     if (subj.mark >= 80){ 
-        subj.grade = "A"; subj.gradePoint = 4.00;
+        subj.grade = "A"; 
+        subj.gradePoint = 4.00;
     }else if (subj.mark >= 75){ 
-        subj.grade = "A-"; subj.gradePoint = 3.67;
+        subj.grade = "A-"; 
+        subj.gradePoint = 3.67;
     }else if (subj.mark >= 70){ 
-        subj.grade = "B+"; subj.gradePoint = 3.33; 
+        subj.grade = "B+"; 
+        subj.gradePoint = 3.33; 
     }else if (subj.mark >= 65){
-        subj.grade = "B"; subj.gradePoint = 3.00; 
+        subj.grade = "B"; 
+        subj.gradePoint = 3.00; 
     }else if (subj.mark >= 60){
-        subj.grade = "B-"; subj.gradePoint = 2.67; 
+        subj.grade = "B-"; 
+        subj.gradePoint = 2.67; 
     }else if (subj.mark >= 55){
-        subj.grade = "C+"; subj.gradePoint = 2.33; 
+        subj.grade = "C+"; 
+        subj.gradePoint = 2.33; 
     }else if (subj.mark >= 50){
-        subj.grade = "C"; subj.gradePoint = 2.00;
+        subj.grade = "C"; 
+        subj.gradePoint = 2.00;
     }else if (subj.mark >= 45){
-        subj.grade = "D+"; subj.gradePoint = 1.67;
+        subj.grade = "D+"; 
+        subj.gradePoint = 1.67;
     }else if (subj.mark >= 40){
-        subj.grade = "D"; subj.gradePoint = 1.33;
+        subj.grade = "D"; 
+        subj.gradePoint = 1.33;
     }else{
-        subj.grade = "F"; subj.gradePoint = 0.00;
+        subj.grade = "F"; 
+        subj.gradePoint = 0.00;
     }
 }
 
