@@ -19,6 +19,30 @@ int main(){
   book books[100];
   int bookCount = 0;
 
+  int choice;
+
+    do {
+        cout << "\n----- Bookstore Inventory and Sales System -----";
+        cout << "\n1. Add A New Book";
+        cout << "\n2. Display All Books Available";
+        cout << "\n3. Search for A Book";
+        cout << "\n4. Buy A Book";
+        cout << "\n5. Show Sales Report";
+        cout << "\n6. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: addBook(book books[], int &bookCount); break;
+            case 2: displayBooks(const book books[], int bookCount); break;
+            case 3: searchBook(const book books[], int bookCount, string keyword); break;
+            case 4: buyBook(book books[], int &bookCount); break;
+            case 5: showReport(); break;
+            case 6: cout << "\nExiting program..."; break;
+            default: cout << "\nInvalid choice. Try again.";
+        }
+         } while (choice != 6);
+
   return 0;
 }
 
