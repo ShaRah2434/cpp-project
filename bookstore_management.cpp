@@ -12,8 +12,9 @@ struct book{
 void addBook(book books[], int &bookCount);
 void displayBooks(const book books[], int bookCount);
 int searchBook(const book books[], int bookCount, string keyword);
-
-
+void buyBook(book books[], int &bookCount);
+       
+   
 int main(){
   book books[100];
   int bookCount = 0;
@@ -81,3 +82,45 @@ int searchBook(const book books[], int bookCount, string keyword){
   cout << "Book not found\n";
   return -1;
 }
+
+void buyBook(book books[], int &bookCount){
+    
+    cout << "----- Purchase Book -----\n";
+    if (bookCount == 0){
+      cout << "No books available to purchase.\n";
+      return;
+      
+    }
+    string isbn;
+  cout << "Enter ISBN of the book to buy: ";
+  getline(cin, isbn);
+    int index = searchBook(books, bookCount, isbn);
+    if (index == -1){ 
+      cout << "Cannot process purchase.\n"; 
+      return;
+      
+    }
+    int quantity; 
+  cout << "Enter quantity to buy: ";
+  cin >> quantity;
+  cin.ignore();
+    if (quantity <= 0){
+      cout << "Invalid quantity.\n";
+      return;
+      
+    }
+    if (quantity > books[index].stock){
+      cout << "Stock not enough! Available: "<<books[index].stock<<"\n";
+      return;
+      
+    }
+    double totalPrice = quantity * books[index].price;
+    books[index].stock -= quantity;
+    cout << "\nPurchase Successful!\n";
+    cout << "You bought: " << books[index].title << "\n";
+    cout << "Quantity: " << quantity << "\n";
+    cout << "Total Price: RM" << fixed << setprecision(2) << totalPrice << "\n";
+    cout << "Remaining Stock: " << books[index].stock << "\n";
+}
+
+
